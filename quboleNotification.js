@@ -11,20 +11,18 @@ if(typeof qbListenerMap == 'undefined')
 	$('.query_hists.qbol-table-query-hist.table').bind("DOMSubtreeModified", function(){ 
 		var value = $('.query_head_status_draft.status-inline span').html(); 
 		setTimeout(function() { 
-
-			console.log(com_id);
 			for(var key in qbListenerMap){
-			   var value = $("tr[id=" + com_id +"] > td:nth-child(2) icon").attr('title');
+			   var value = $("tr[id=" + key +"] > td:nth-child(2) icon").attr('title');
 
 			   if(value=="Success" && qbListenerMap[key]){ 
-		   		alert("Job:" + com_id + " succeeded");
+		   		alert("Job:" + key + " succeeded");
 
 		   		if($.isEmptyObject(qbListenerMap)){
 		   			$('.query_hists.qbol-table-query-hist.table').unbind("DOMSubtreeModified");
 		   		} 
 		   		delete qbListenerMap[key];
 			   }else if(value=="Failed" && qbListenerMap[key]){
-				alert("Job:" + com_id + " failed"); 
+				alert("Job:" + key + " failed"); 
 				delete qbListenerMap[key];
 			   }	
 			}

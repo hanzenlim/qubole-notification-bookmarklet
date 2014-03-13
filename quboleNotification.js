@@ -11,10 +11,11 @@ if(typeof qbListenerMap == 'undefined')
 	$('.query_hists.qbol-table-query-hist.table').bind("DOMSubtreeModified", function(){ 
 		var value = $('.query_head_status_draft.status-inline span').html(); 
 		setTimeout(function() { 
-			var value = $("tr[id=" + com_id +"] > td:nth-child(2) icon").attr('title');
 
 			console.log(com_id);
 			for(var key in qbListenerMap){
+			   var value = $("tr[id=" + com_id +"] > td:nth-child(2) icon").attr('title');
+
 			   if(value=="Success" && qbListenerMap[key]){ 
 		   		alert("Job:" + com_id + " succeeded");
 

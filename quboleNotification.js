@@ -20,7 +20,7 @@ if(typeof qbListenerMap == 'undefined')
 		   		alert("Job:" + com_id + " succeeded");
 
 		   		if($.isEmptyObject(qbListenerMap)){
-		   			$('.query_head_status_draft.status-inline').unbind();
+		   			$('.query_hists.qbol-table-query-hist.table').unbind();
 		   		} 
 		   		delete qbListenerMap[com_id];
 			}else if(value=="Failed" && qbListenerMap[com_id]){

@@ -2,19 +2,21 @@ javascript:
 if(typeof qbListenerMap == 'undefined')
 		qbListenerMap = {};
 	console.log(qbListenerMap);
-	(function(){ $('.query_head_status_draft.status-inline').unbind();  
+	(function(){ 
 
 	var com_id = $('.command_id_draft').attr('com_id');
 	qbListenerMap[com_id] = 1;
 
-	$('.query_head_status_draft.status-inline').unbind();
-	$('.query_head_status_draft.status-inline').bind("DOMSubtreeModified", function(){ 
+	$('.query_hists.qbol-table-query-hist.table').unbind("DOMSubtreeModified");
+	$('.query_hists.qbol-table-query-hist.table').bind("DOMSubtreeModified", function(){ 
 		var value = $('.query_head_status_draft.status-inline span').html(); 
+
 		console.log('change');
 		setTimeout(function() { 
-			var com_id = $('.command_id_draft').attr('com_id');
+			var value = $("tr[id=" + com_id +"] > td:nth-child(2) icon").attr('title');
+
 			console.log(com_id);
-			if(value=="Succeeded" && qbListenerMap[com_id]){ 
+			if(value=="Success" && qbListenerMap[com_id]){ 
 		   		alert("Job:" + com_id + " succeeded");
 
 		   		if($.isEmptyObject(qbListenerMap)){
@@ -26,7 +28,7 @@ if(typeof qbListenerMap == 'undefined')
 				delete qbListenerMap[com_id];
 			}
 		}, 1000);
-		
+
 	}); 
 	alert("Listening to Qubole job:" + com_id);  
 	})()

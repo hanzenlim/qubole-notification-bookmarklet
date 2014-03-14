@@ -6,8 +6,9 @@ if(typeof qbListenerMap == 'undefined')
 
 	var com_id = $('.command_id_draft').attr('com_id');
 	qbListenerMap[com_id] = 1;
-
-	$('.query_hists.qbol-table-query-hist.table').bind("DOMSubtreeModified", function(){ 
+	var histElem = $('.query_hists.qbol-table-query-hist.table');
+	if(histElem.data('events').DOMSubtreeModified == undefined){
+	  $('.query_hists.qbol-table-query-hist.table').bind("DOMSubtreeModified", function(){ 
 		var value = $('.query_head_status_draft.status-inline span').html(); 
 		setTimeout(function() { 
 			for(var key in qbListenerMap){
@@ -28,6 +29,7 @@ if(typeof qbListenerMap == 'undefined')
 			
 		}, 1000);
 
-	}); 
+	  });
+	}
 	alert("Listening to Qubole job:" + com_id);  
 	})()

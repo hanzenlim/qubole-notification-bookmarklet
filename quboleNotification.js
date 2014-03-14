@@ -7,7 +7,6 @@ if(typeof qbListenerMap == 'undefined')
 	var com_id = $('.command_id_draft').attr('com_id');
 	qbListenerMap[com_id] = 1;
 
-	$('.query_hists.qbol-table-query-hist.table').unbind("DOMSubtreeModified");
 	$('.query_hists.qbol-table-query-hist.table').bind("DOMSubtreeModified", function(){ 
 		var value = $('.query_head_status_draft.status-inline span').html(); 
 		setTimeout(function() { 

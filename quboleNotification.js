@@ -27,7 +27,7 @@ if(typeof qbListenerMap == 'undefined')
 			   }	
 			}
 			
-		}, 1000);
+		}, 2000);
 
 	  });
 	}

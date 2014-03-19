@@ -29,4 +29,5 @@ javascript:
 	  });
 	}
 	alert("Listening to Qubole job:" + com_id);  
+	return window.qbListenerMap = qbListenerMap;
 	})(this)

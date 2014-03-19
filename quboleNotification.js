@@ -1,6 +1,6 @@
 javascript:
 (function(window){ 
-	var qbListenerMap = qbListenerMap || {};
+	var qbListenerMap = window.qbListenerMap || {};
 	var com_id = $('.command_id_draft').attr('com_id');
 	qbListenerMap[com_id] = 1;
 	var histElem = $('.query_hists.qbol-table-query-hist.table');

@@ -1,9 +1,6 @@
 javascript:
-if(typeof qbListenerMap == 'undefined')
-		qbListenerMap = {};
-	console.log(qbListenerMap);
-	(function(){ 
-
+(function(window){ 
+	var qbListenerMap = qbListenerMap || {};
 	var com_id = $('.command_id_draft').attr('com_id');
 	qbListenerMap[com_id] = 1;
 	var histElem = $('.query_hists.qbol-table-query-hist.table');
@@ -32,4 +29,4 @@ if(typeof qbListenerMap == 'undefined')
 	  });
 	}
 	alert("Listening to Qubole job:" + com_id);  
-	})()
+	})(this)

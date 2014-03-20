@@ -28,37 +28,22 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+      <h4 style="margin-bottom:0"><span style="font-size:60px">&#8595;</span>   Drag me to your bookmark bar</h4>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        <button><a href="javascript: (function(window){ var qbListenerMap = window.qbListenerMap || {}; var com_id = $('.command_id_draft').attr('com_id'); qbListenerMap[com_id] = 1; var histElem = $('.query_hists.qbol-table-query-hist.table'); if(histElem.data('events').DOMSubtreeModified == undefined){ $('.query_hists.qbol-table-query-hist.table').bind('DOMSubtreeModified', function(){ var value = $('.query_head_status_draft.status-inline span').html(); setTimeout(function() { for(var key in qbListenerMap){ var value = $('tr[id=' + key +'] > td:nth-child(2) icon').attr('title'); if(value=='Success' && qbListenerMap[key]){ alert('Job:' + key + ' succeeded'); if($.isEmptyObject(qbListenerMap)){ $('.query_hists.qbol-table-query-hist.table').unbind('DOMSubtreeModified'); } delete qbListenerMap[key]; }else if(value=='Failed' && qbListenerMap[key]){ alert('Job:' + key + ' failed'); delete qbListenerMap[key]; } } }, 2000); }); } alert('Listening to Qubole job:' + com_id); return window.qbListenerMap = qbListenerMap; })(this)"><span>Qubole it</span></a></button>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+        </br>
+        </br>
+        <h4>Qubole bookmarklet</h4>
+<p>Listens to qubole api (https://api.qubole.com) for job status and alerts you when a job is done</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<h4>Use Case:</h4>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>A typical qubole job takes some time to finish a query and switching contexts is not unusual. With this bookmarklet, you can attach a listener to the job and will alert you when the job is done.</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<h4>Usage:</h4>
+<p>After you submit a job, click the qubole bookmarklet and it will attach a listener to the job</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/hanzenlim">hanzenlim</a></p>

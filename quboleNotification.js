@@ -1,11 +1,12 @@
 javascript:
 (function(window){ 
-	var qbListenerMap = window.qbListenerMap || {};
-	var com_id = $('.command_id_draft').attr('com_id');
-	qbListenerMap[com_id] = 1;
-	var histElem = $('.query_hists.qbol-table-query-hist.table');
-	if(histElem.data('events').DOMSubtreeModified == undefined){
-	  $('.query_hists.qbol-table-query-hist.table').bind("DOMSubtreeModified", function(){ 
+	if(typeof jQuery !== 'undefined' && typeof qbol_user_id !== 'undefined'){
+ 	  var qbListenerMap = window.qbListenerMap || {};
+	  var com_id = $('.command_id_draft').attr('com_id');
+	  qbListenerMap[com_id] = 1;
+	  var histElem = $('.query_hists.qbol-table-query-hist.table');
+	  if(histElem.data('events').DOMSubtreeModified == undefined){
+	    $('.query_hists.qbol-table-query-hist.table').bind("DOMSubtreeModified", function(){ 
 		var value = $('.query_head_status_draft.status-inline span').html(); 
 		setTimeout(function() { 
 		    for(var key in qbListenerMap){
@@ -23,7 +24,8 @@ javascript:
 		    }
 		}, 2000);
 	  });
+	  }
+	  alert("Listening to Qubole job:" + com_id);  
+	  return window.qbListenerMap = qbListenerMap;
 	}
-	alert("Listening to Qubole job:" + com_id);  
-	return window.qbListenerMap = qbListenerMap;
 })(this)

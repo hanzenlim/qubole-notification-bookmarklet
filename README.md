@@ -12,3 +12,4 @@ After you submit a job, click the Qubole it bookmarklet and it will attach a lis
 
 ##test commit
 #test commit2
+#tes 4 - local
